@@ -17,7 +17,6 @@ This starts with [TEA TAPR data](https://tea.texas.gov/perfreport/tapr/index.htm
 - On the file format, I'm going to recommend **Comma delimited** because it is a smaller file and perhaps easier to programattically combine with other years.
     - You _might_ be tempted to use the **Excel** version, but those files are MUCH larger and can crash Excel, especially if you have the whole state. I _was_ able to open the Region 13 file.
 - Here you want to select specific data points you want to download if there are particular grades or subjects you want to study. If you **Select All*, you'll get 280+ columns of data. That's a LOT of data.
-    - 
 - While on this page, you will also want to click on the link **Advanced Courses (Grades 9-12 & 11-12) Reference** and save that (I saved links below.) I noticed the description for Native American changed to American Indian in 2017. The column names are similar, except for the year.
 - Once you've downloaded the file, rename it with the year so you know which one it is. Move it into a folder where you can work on it.
 
