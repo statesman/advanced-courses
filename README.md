@@ -56,4 +56,23 @@ TEA masks numbers where the total number of students is less than five. The link
 ## Questions and caveats
 
 The calendar year 2016-17 shows Advanced Course rates (percent of those taking advance courses / taking any course) for seperate years 2015 and 2016. This is where a call to TEA might be in order. I don't know if that is a comparison to the previous year's cohort of students, or that some tests are administered in the first calendar year and others in the second calendar year of the same school year. Or if they are retakes. IF THEY ARE DIFFERENT COHORTS, then I would just choose the most recent year for a given category. I've looked through the [TAPR Glossary](https://tea.texas.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=51539617810&libID=51539617810) and I didn't see an explantion why there are two distinct years in each data set.
+
 - Melissa says there are two years to compare against. As such, I pulled the most recent release available for any given year.
+
+## Steps to process the data.
+
+In this repo, I've have a Jupyter Notebook that processes the data for Any Subject, Grades 9-12, found in `notebooks/01_data_process.ipynp`. I use programming to do this because I'm more likely to make mistakes, and it is easier to fix mistakes that come early in a long process. That said, these steps can be done manually.
+
+- Make a copy of the data folder, so you keep pristine origials. I would use the files in `data-raw/excel-any` if you are going to work with these in Excel.
+    - If you do use the csv verisons, make sure to import them as text, and [make sure the CAMPUS column is treated as text](https://support.office.com/en-us/article/text-import-wizard-c5b02af6-fda1-4440-899f-f78bafe41857), and not a number.
+
+### Combine the files
+- You are going to create a new file that is a combination of all the other ones.
+    - Check each of the individual files to make sure the columns are the same and in the same order, using the **Reference files** listed above. 2012 is the odd one because the columns names are different. 
+- Create your new file, and then copy and paste each of the others into the same sheet, one below the other. You can either exclude the header or, or delete it afterward. I usually move them over and double check them to the header row to make sure the columns are the same. [Freezing the top row can help with that.](https://support.office.com/en-us/article/freeze-panes-to-lock-rows-and-columns-dab2ffc9-020d-4026-8121-67dd25f2508f)
+- Rename the header row to something you can understand.
+
+### Deal with masked data
+- Now you have to de-mask the data (see notes above), which takes some editorial decisions.
+    - The data uses a period in cells where there is no data. If you are going to use in visualization or charting software at all, then I would remove those. You can use Replace, but use "Find entire cells only" to replace a period with nothing.
+    - If there are fewer than five students in a percentage, then TEA used "-1" in the data. This is the more difficult decision. You can't really add these percentage values of the data anyway, so my choice was to change them to a "1" to is till show at least something and then explain that in chatter anytime I use them. Some folks who are doing math on some data will take the median of what it _could_ be, so "3", in this case. Make your choice, and use Replace with "Find entire cells only".
