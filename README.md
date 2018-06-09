@@ -3,7 +3,7 @@ Advanced courses
 
 This is written mainly to guide Melissa Taboada in working with TAPR data about advanced placement course attendance.
 
-The good news: I have a finished data set in `data-work/ac_any_subject.csv` for you that combines five years together, adjusts the masked data values and adds the school and district names. You can walk into your workshop with data ready to analyze. All the combining and data munging was done through programming, and you can view on Github, FWIW. (I'll try to add the link here later.)
+The good news: I have a finished data set in `data-work/ac_any_subject.csv` for you that combines five years together, adjusts the masked data values and adds the school and district names. You can walk into your workshop with data ready to analyze. All the combining and data munging was done through programming, and you can [view on Github](https://github.com/statesman/advanced-courses/blob/master/notebooks/01_data_process.ipynb), FWIW.
 
 However, if you want to go through all the steps, or understand the concepts of what I've done, I've written out each step with explanations, etc.
 
